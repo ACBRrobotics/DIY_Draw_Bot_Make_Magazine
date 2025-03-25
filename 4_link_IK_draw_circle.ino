@@ -1,8 +1,17 @@
-// A simple Arduino sketch for calculating the inverse kinematics
-// of a 4 Link Dual SCARA robot arm.
+/* 
+This Arduino sketch was written for an article in the May 2025 issue of Make: Magazine.
+This sketch is an example for the DIY drawbot. In this example, the points needed to draw
+a circle are calculated and sent to the servos of the DIY drawbot.
 
-// These four values are just sample values and can be changed to accommodate the
-// values of your system.
+Author: Matt Eaton
+www.MattEaton.info
+
+Licence: (MIT) fully open-source.  Feel free to edit, copy, update, etc. Have fun!
+For more information about learning inverse kinematics for robotics projects, feel
+free to check out my book, also published through Make entitled "Make: Robotic Arms" 
+available on Amazon, through Make's website, and other popular book retailers.
+*/
+
 #include "Servo.h"
 Servo servoOne;
 Servo servoTwo;
