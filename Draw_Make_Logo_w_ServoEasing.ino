@@ -1,14 +1,14 @@
 /* 
 This Arduino sketch was written for an article in the May 2025 issue of Make: Magazine.
-This sketch is an example for the DIY drawbot. In this example the ServoEasing library 
-is implemented to allow for smooth motion, as it nagivates through a series of points 
+This sketch is an example for the DIY drawbot. In this example, the ServoEasing library 
+is implemented to allow for smooth motion, as it navigates through a series of points 
 that draw the Make: logo.
 
 Author: Matt Eaton
 www.MattEaton.info
 Licence: (MIT) fully open-source.  Feel free to edit, copy, update, etc. Have fun!
 For more information about learning inverse kinematics for robotics projects, feel
-free to check out my book, also published through Make entitled, "Make: Robotic Arms" 
+free to check out my book, also published through Make entitled "Make: Robotic Arms" 
 available on Amazon, through Make's website, and other popular book retailers.
 */
 
@@ -44,7 +44,7 @@ void setup() {
 
 void loop()
 {
-  // Define the four corners of the square
+  // Define the points needed to draw the "Make:" logo
   double points[30][2] = {
     {-10,90},
     {-5,90},
@@ -95,8 +95,6 @@ void loop()
     betaOne = atan(y / (d - x)) * (180 / PI);
     betaTwo = acos(((linkTwo * linkTwo) - (e * e) - (linkOne * linkOne))
                   / (-2 * linkOne * e)) * (180 / PI);
-
-
     if (x < 0) {
       alphaFinal = 180 + ((alphaOne) + (alphaTwo));
       betaFinal = 180 - ((betaOne) + (betaTwo));
@@ -109,7 +107,6 @@ void loop()
       alphaFinal = ((alphaOne) + (alphaTwo));
       betaFinal = 180 - ((betaOne) + (betaTwo));
     }
-
 
     Serial.print("alpha One: ");
     Serial.print(alphaOne);
@@ -124,11 +121,9 @@ void loop()
     Serial.print(" Beta: ");
     Serial.println(betaFinal);
 
-
     Servo1.setEaseTo((int)alphaFinal);
     Servo2.setEaseTo((int)betaFinal);
     synchronizeAllServosStartAndWaitForAllServosToStop(); 
-
 
     //delay(1000); // Adjust the delay as needed for smooth motion between points
   }
