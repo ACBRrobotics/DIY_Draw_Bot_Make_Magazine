@@ -1,6 +1,10 @@
 /*
 This Arduino sketch was written for an article in the May 2025 issue of Make: Magazine
+This sketch is the main example that allows for joystick control to move the pen attached
+to the end effector of the four link robotic arm. 
+
 Author: Matt Eaton
+www.MattEaton.info
 Licence: (MIT) fully open-source.  Feel free to edit, copy, update, etc. Have fun!
 For more information about learning inverse kinematics for robotics projects, feel
 free to check out my book, also published through Make entitled, "Make: Robotic Arms" 
